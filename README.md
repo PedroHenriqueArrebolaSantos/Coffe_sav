@@ -1,69 +1,35 @@
-# React + TypeScript + Vite
+# Projeto de E-commerce Simplificado - Cafeteria - Coffe_sav
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Objetivo do Projeto
 
-Currently, two official plugins are available:
+Este projeto tem como objetivo desenvolver uma aplicação web de e-commerce simplificada, voltada para uma cafeteria virtual. Nele, o usuário pode visualizar os produtos disponíveis, acessar os detalhes dos itens, adicionar ao carrinho e simular uma finalização de pedido.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+- **React JS** (componentes, props, estado)
+- **React Router DOM** (navegação entre páginas)
+- **CSS** (estilização)
+- **LocalStorage** (armazenamento de dados do carrinho e produtos)
+- **JavaScript**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Funcionalidades
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Área do Cliente
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- Página inicial com exibição dos produtos (cafés, bolos e etc.)
+- Página de detalhes do produto (imagem, descrição e preço)
+- Carrinho de compras:
+  - Adicionar produtos
+  - Remover produtos
+  - Listar produtos adicionados
+- Simulação de finalização de pedido (sem sistema de pagamento)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Área Administrativa
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Cadastro de novos produtos via código (formulário interno ou JSON)
+- Edição e exclusão de produtos (via interface ou localStorage manualmente)
+- Listagem dos produtos cadastrados
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Armazenamento de Dados
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Todos os dados (produtos e carrinho) são armazenados utilizando o `localStorage` do navegador. Assim, ao recarregar a página, os produtos e o carrinho permanecem salvos até serem apagados manualmente ou via função de exclusão.
