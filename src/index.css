@@ -129,19 +129,19 @@ button:focus-visible {
 
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  width: 1000px;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+  gap: 20px; /* espaçamento entre os itens */
+  padding: 20px;
 }
 
 .product-card {
   background-color: #607274;
   border-radius: 20px;
-  padding: 1rem;
+  padding: 16px;
   text-align: center;
 }
 .product-card:hover {
-  width: 285px;
+  width: 90%;
 }
 
 .product-card img {
